@@ -12,7 +12,7 @@ abstract contract ERC721URIStorage is ERC721 {
     using Strings for uint256;
 
     // Optional mapping for token URIs
-    mapping(uint256 => string) private _tokenURIs;
+    mapping(uint256 => string) internal _tokenURIs;
 
     /**
      * @dev See {IERC721Metadata-tokenURI}.
@@ -29,9 +29,8 @@ abstract contract ERC721URIStorage is ERC721 {
         }
         // If both are set, concatenate the baseURI and tokenURI (via abi.encodePacked).
         if (bytes(_tokenURI).length > 0) {
-            _tokenURI;
+           return  _tokenURI;
         }
-
         return super.tokenURI(tokenId);
     }
 
